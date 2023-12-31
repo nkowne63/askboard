@@ -1,19 +1,40 @@
-import { Links, LiveReload, Meta, Outlet, Scripts } from "@remix-run/react";
+// Import styles of packages that you've installed.
+// All packages except `@mantine/hooks` require styles imports
+import "@mantine/core/styles.css";
+
+import { cssBundleHref } from "@remix-run/css-bundle";
+import type { LinksFunction } from "@remix-run/node";
+import {
+  Links,
+  LiveReload,
+  Meta,
+  Outlet,
+  Scripts,
+  ScrollRestoration,
+} from "@remix-run/react";
+import { ColorSchemeScript, MantineProvider } from "@mantine/core";
+
+export const links: LinksFunction = () => [
+  ...(cssBundleHref ? [{ rel: "stylesheet", href: cssBundleHref }] : []),
+];
 
 export default function App() {
   return (
-    <html>
+    <html lang="en">
       <head>
-        <link rel="icon" href="data:image/x-icon;base64,AA" />
+        <meta charSet="utf-8" />
+        <meta name="viewport" content="width=device-width,initial-scale=1" />
         <Meta />
         <Links />
+        <ColorSchemeScript />
       </head>
       <body>
-        <h1>Hello world!</h1>
-        <Outlet />
-
-        <Scripts />
-        <LiveReload />
+        <MantineProvider>
+          <Outlet />
+          <ScrollRestoration />
+          <Scripts />
+          <LiveReload />
+        </MantineProvider>
       </body>
     </html>
   );
