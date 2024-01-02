@@ -8,6 +8,7 @@ export default VitestConfig.defineConfig({
     globals: true,
     includeSource: ["app/**/*.{ts,tsx}"],
     exclude: ["node_modules"],
+    setupFiles: "./vitest.setup.ts"
   },
   resolve: {
     alias: {
