@@ -1,8 +1,9 @@
 {
   "name": "@nkowne63/askboard",
+  "author": "nkowne63rt",
   "scripts": {
     "build": "turbo build",
-    "web": "pnpm --filter web"
+    "p:core": "pnpm --filter core"
   },
   "devDependencies": {
     "turbo": "latest"
