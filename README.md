@@ -20,27 +20,27 @@ You can also track charges by API Key.
 
 The following interface is planned.
 
-## tui
+## tui [WIP]
 
 This is the version that runs on the terminal.
 Intended for local use.
 
-## slack
+## slack [WIP]
 
 This is the version as a bot in the slack workspace.
 It is intended for deployment in several environments.
 
-## discord
+## discord [WIP]
 
 This is the bot version on the discord server.
 It is intended for deployment in several environments.
 
-## api
+## api [WIP]
 
 This version operates as a RESTful API server.
 It has an authentication system and is intended for deployment on cloudflare.
 
-## web, web-backend
+## web, web-backend [WIP]
 
 This version can be accessed from a web browser.
 It has an authentication system and a simple encryption mechanism, and supports synchronization of settings between multiple clients.
