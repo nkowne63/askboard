@@ -1,6 +1,5 @@
 {
-  "name": "my-turborepo",
-  "private": true,
+  "name": "@nkowne63/askboard",
   "scripts": {
     "build": "turbo build",
     "web": "pnpm --filter web"
@@ -12,5 +11,12 @@
     "overrides": {
       "vite": "5.0.10"
     }
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/nkowne63/askboard"
+  },
+  "publishConfig": {
+    "registry": "https://npm.pkg.github.com"
   }
 }
