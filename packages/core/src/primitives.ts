@@ -1,22 +1,3 @@
-const Tag = Symbol("Tag");
-const AssistantId = Symbol("AssistantId");
-const FunctionsId = Symbol("FunctionsId");
-const ThreadId = Symbol("ThreadId");
-const OrganizationId = Symbol("AccountId");
-const ApiKey = Symbol("ApiKey");
-const Path = Symbol("Path");
-
-const PrimitiveSymbols = {
-	Tag,
-	AssistantId,
-	FunctionsId,
-	ThreadId,
-	OrganizationId,
-	ApiKey,
-	Path,
-} as const;
-type PrimitiveSymbols = typeof PrimitiveSymbols;
-
 type PrimitiveRawTypes = {
 	Tag: string;
 	AssistantId: string;
@@ -26,6 +7,17 @@ type PrimitiveRawTypes = {
 	ApiKey: string;
 	Path: string;
 };
+
+const PrimitiveSymbols = {
+	Tag: Symbol("Tag"),
+	AssistantId: Symbol("AssistantId"),
+	FunctionsId: Symbol("FunctionsId"),
+	ThreadId: Symbol("ThreadId"),
+	OrganizationId: Symbol("AccountId"),
+	ApiKey: Symbol("ApiKey"),
+	Path: Symbol("Path"), // not the whole path, but one part of it
+} as const satisfies { [k in keyof PrimitiveRawTypes]: symbol };
+type PrimitiveSymbols = typeof PrimitiveSymbols;
 
 type Nominal<S extends symbol, T> = T & { [k in S]: never };
 export type Primitive = {
