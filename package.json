@@ -3,7 +3,7 @@
   "author": "nkowne63rt",
   "scripts": {
     "build": "turbo build",
-    "p:core": "pnpm --filter core"
+    "core": "pnpm --filter @nkowne63/askboard-core"
   },
   "devDependencies": {
     "turbo": "latest"
